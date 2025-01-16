@@ -53,7 +53,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="test ok")
         )
-        return  # 処理を終了
+        return  # これで処理が終了し、他のメッセージに対する処理がされないようにする
 
     # 「通話したい」と送信された場合
     if message == "通話したい":
