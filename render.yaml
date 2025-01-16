@@ -6,6 +6,6 @@ services:
     startCommand: python app.py
     envVars:
       - key: LINE_CHANNEL_ACCESS_TOKEN
-        value: "あなたのチャネルアクセストークン"
+        value: "2006785965"
       - key: LINE_CHANNEL_SECRET
-        value: "あなたのチャネルシークレット"
+        value: "7bda0e1a57f76b613a30fc7a893474dd"
