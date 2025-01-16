@@ -6,8 +6,8 @@ from linebot.exceptions import InvalidSignatureError
 app = Flask(__name__)
 
 # あなたのLINEチャネル情報を設定
-LINE_CHANNEL_ACCESS_TOKEN = "あなたのチャネルアクセストークン"
-LINE_CHANNEL_SECRET = "あなたのチャネルシークレット"
+LINE_CHANNEL_ACCESS_TOKEN = "2006785965"
+LINE_CHANNEL_SECRET = "7bda0e1a57f76b613a30fc7a893474dd"
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
