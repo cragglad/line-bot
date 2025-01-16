@@ -47,6 +47,15 @@ def handle_message(event):
     user_id = event.source.user_id
     message = event.message.text
 
+    # 「テスト」と送信された場合
+    if message == "テスト":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="test ok")
+        )
+        return  # 処理を終了
+
+    # 「通話したい」と送信された場合
     if message == "通話したい":
         current_time = time.time()
 
