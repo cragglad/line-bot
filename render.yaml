@@ -2,10 +2,11 @@ services:
   - type: web
     name: line-bot
     env: python
-    buildCommand: ""
+    buildCommand: "pip install -r requirements.txt"
     startCommand: python app.py
     envVars:
       - key: LINE_CHANNEL_ACCESS_TOKEN
-        value: "2006785965"
+        value: "your_access_token"
       - key: LINE_CHANNEL_SECRET
-        value: "7bda0e1a57f76b613a30fc7a893474dd"
+        value: "your_channel_secret"
+
