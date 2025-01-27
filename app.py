@@ -55,6 +55,21 @@ def handle_message(event):
         )
         return  # これで処理が終了し、他のメッセージに対する処理がされないようにする
 
+    # 「キャンセル」と送信された場合
+    if message == "キャンセル":
+        if user_id in user_requests:
+            del user_requests[user_id]  # リクエストを削除
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="リクエストをキャンセルしました。")
+            )
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="キャンセルするリクエストがありません。")
+            )
+        return  # 処理終了
+
     # 「通話したい」と送信された場合
     if message == "通話したい":
         current_time = time.time()
@@ -73,7 +88,7 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(
                 event.reply_token,
-                TextSendMessage(text="リクエストを記録しました。相手の希望を待っています。")
+                TextSendMessage(text="リクエストを記録しました。有効期限は３時間です。キャンセルする場合は「キャンセル」と入力してください。")
             )
 
 if __name__ == "__main__":
